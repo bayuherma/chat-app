@@ -34,15 +34,15 @@ class AppTheme {
   final lightBase = ThemeData.light();
 
   /// Light theme and its settings.
-  ThemeData get light => ThemeData(
+  static ThemeData  light() => ThemeData(
         brightness: Brightness.light,
-        colorScheme: lightBase.colorScheme.copyWith(secondary: accentColor),
+        colorScheme: ThemeData.light().colorScheme.copyWith(secondary: accentColor),
         visualDensity: visualDensity,
         textTheme:
             GoogleFonts.mulishTextTheme().apply(bodyColor: AppColors.textDark),
         backgroundColor: _LightColors.background,
-        appBarTheme: lightBase.appBarTheme.copyWith(
-          iconTheme: lightBase.iconTheme,
+        appBarTheme: ThemeData.light().appBarTheme.copyWith(
+          iconTheme: ThemeData.light().iconTheme,
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
@@ -65,14 +65,14 @@ class AppTheme {
       );
 
   /// Dark theme and its settings.
-  ThemeData get dark => ThemeData(
+  static ThemeData get dark => ThemeData(
         brightness: Brightness.dark,
-        colorScheme: darkBase.colorScheme.copyWith(secondary: accentColor),
+        colorScheme: ThemeData.dark().colorScheme.copyWith(secondary: accentColor),
         visualDensity: visualDensity,
         textTheme:
             GoogleFonts.interTextTheme().apply(bodyColor: AppColors.textLigth),
         backgroundColor: _DarkColors.background,
-        appBarTheme: darkBase.appBarTheme.copyWith(
+        appBarTheme: ThemeData.dark().appBarTheme.copyWith(
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
